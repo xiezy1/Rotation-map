@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./class.js"></script>
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #wapper {
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #000;
+        }
+
+        #wapper ul#slider {
+            width: 2500px;
+            height: 300px;
+            position: absolute;
+            left: -500px;
+        }
+
+        #wapper ul li {
+            width: 500px;
+            height: 300px;
+            float: left;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        #wapper:hover a {
+            display: block;
+        }
+
+        #focus {
+            position: absolute;
+            height: 20px;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+        }
+
+        #focus span {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-color: blue;
+            border-radius: 50%;
+        }
+
+        #focus span.active {
+            background-color: red;
+        }
+
+        a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            width: 40px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            color: #000;
+            font-size: 18px;
+            display: none;
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        a.left {
+            left: 0;
+        }
+
+        a.right {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wapper">
+        <ul id="slider">
+            <li>3</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>1</li>
+        </ul>
+        <a class="left">left</a>
+        <a class="right">right</a>
+        <div id="focus">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <script>
+        new sliderBox({
+            slider_step: 500,
+            slider_wapper: "#wapper",
+            slider_box: "#slider",
+            slider_focus: "#focus",
+            slider_a: ['.left', '.right'],
+            focusTriggerType: 'hover',
+            autoplay: 2000
+        })
+    </script>
+</body>
+
+</html>
