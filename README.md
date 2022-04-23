@@ -1,5 +1,7 @@
 <h2 align="center">原生js实现轮播图</h2>
 
+<a href="https://xiezy1.github.io/Rotation-map/index.html">预览</a>
+
 > How to use
 
 ```html
